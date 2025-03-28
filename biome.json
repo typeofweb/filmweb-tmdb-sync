@@ -1,0 +1,57 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"ignore": [
+			"package.json",
+			"pnpm-lock.yaml"
+		]
+	},
+	"formatter": {
+		"lineWidth": 110
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noForEach": "off"
+			},
+			"correctness": {
+				"noUnusedImports": {
+					"level": "warn",
+					"fix": "unsafe"
+				},
+				"noEmptyPattern": "off"
+			},
+			"style": {
+				"useSelfClosingElements": "off",
+				"noUnusedTemplateLiteral": "off",
+				"noUselessElse": "off",
+				"useTemplate": "off",
+				"noDefaultExport": "error",
+				"noNamespace": "error",
+				"useForOf": "error",
+				"noRestrictedGlobals": {
+					"level": "error",
+					"options": {
+						"deniedGlobals": ["name", "event"]
+					}
+				}
+			},
+			"suspicious": {
+				"noEmptyInterface": "off",
+				"noArrayIndexKey": "off"
+			}
+		}
+	}
+}
